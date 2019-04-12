@@ -7,8 +7,10 @@ function [Hux,H2ux, uxx2] = HJFD(u,dx)
 % shift the vectors using the appropriate BC
 [uB, uF] = shiftNeumann(u);
 % 
-Hux = max(uB-dx,uF-dx);
-H2ux = max(u,Hux);
+%Hux = max(max(uB-dx,uF-dx),u);
+%H2ux = max(u,Hux);
+Hux = max(uB, uF);
+H2ux = max(max(uB-dx,uF-dx), u);
 uxx2 = .5*(uF + uB -2*u)/dx^2;
 
 function [uB, uF] = shiftNeumann(u)

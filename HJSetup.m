@@ -1,11 +1,9 @@
-function  [x,u0,h,a0,dx,dt,n,Nt] = HJSetup(n,Tf,flag)
+function  [x,u0,h,a0,dx,dt,n,Nt] = HJSetup(n,Tf,flag,a0)
 % make dx a round number. So want n = 101,
 n = n+1;
 x = linspace(-3,3,n); dx = x(2)-x(1);  x = x(:); % make it a column vector
 
 h = 0;
-a0 = 0.1;
-%a0 =0;
 
 % subtract off the small amount of "free" diffusion
 a0 = max(0, a0 - dx/2);
