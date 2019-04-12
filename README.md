@@ -2,7 +2,7 @@
 
 
 
-Changer :
+Changer, dans <HJContrlSolver.m>
 
 
 # Pour avoir la Figure 4 (haut) :
